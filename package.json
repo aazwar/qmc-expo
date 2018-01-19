@@ -6,6 +6,12 @@
     "native-base": "^2.3.5",
     "react": "16.0.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-24.0.0.tar.gz",
+    "react-native-material-dropdown": "^0.6.1",
+    "react-native-modal-datetime-picker": "^4.13.0",
     "react-navigation": "^1.0.0-beta.21"
+  },
+  "scripts": {
+    "prettier": "prettier --write --print-width 130 --single-quote --jsx-bracket-same-line --trailing-comma es5 *.js app/**.js app/**/*.js",
+    "clear-cache": "watchman watch-del-all && rm -rf node_modules/ && yarn cache clean && yarn install && npm start -- --reset-cache"
   }
 }

@@ -1,51 +1,28 @@
-import React, { Component } from "react";
-import {
-  Container,
-  Header,
-  Title,
-  Content,
-  Text,
-  Button,
-  Icon,
-  Footer,
-  FooterTab,
-  Left,
-  Right,
-  Body
-} from "native-base";
-
-import styles from './styles';
+import React, { Component } from 'react';
+import { ImageBackground } from 'react-native';
+import { Container, Header, Title, Content, Text, Button, Icon, Footer, FooterTab, Left, Right, Body, H3 } from 'native-base';
+import styles, { deviceWidth, contentHeight } from './styles';
 
 export default class Home extends Component {
   render() {
     return (
       <Container style={styles.container}>
         <Header>
-          <Left>
-            <Button
-              transparent
-              onPress={() => this.props.navigation.navigate("DrawerOpen")}
-            >
+          <Left style={{ width: 50 }}>
+            <Button transparent onPress={() => this.props.navigation.navigate('DrawerOpen')}>
               <Icon name="ios-menu" />
             </Button>
           </Left>
           <Body>
-            <Title>Header</Title>
+            <Title style={{ width: deviceWidth - 100 }}>Quttainah Medical Center</Title>
           </Body>
           <Right />
         </Header>
-
-        <Content padder>
-          <Text>Content goes here</Text>
-        </Content>
-
-        <Footer>
-          <FooterTab>
-            <Button active full>
-              <Text>Footer</Text>
-            </Button>
-          </FooterTab>
-        </Footer>
+        <ImageBackground
+          source={require('./assets/splash.png')}
+          style={{ height: contentHeight, flex: 1 }}
+          imageStyle={{ resizeMode: 'stretch' }}
+        />
       </Container>
     );
   }

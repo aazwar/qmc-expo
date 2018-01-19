@@ -1,61 +1,61 @@
-import React, { Component } from "react";
-import { Image } from "react-native";
-import {
-  Content,
-  Text,
-  List,
-  ListItem,
-  Icon,
-  Container,
-  Left,
-  Right,
-  Badge
-} from "native-base";
+import React, { Component } from 'react';
+import { Image } from 'react-native';
+import { Content, Text, List, ListItem, Icon, Container, Left, Right, Badge } from 'native-base';
+import { FontAwesome, Entypo } from '@expo/vector-icons';
 
 import styles from './styles';
 
+const drawerCover = require('./assets/drawer-cover.png');
+const drawerImage = require('./assets/quttainah-logo.png');
+
 const datas = [
   {
-    name: "Book",
-    route: "Book",
-    icon: "phone-portrait",
-    bg: "#C5F442"
+    name: 'Book an Appointment',
+    route: 'Appointment',
+    icon: 'calendar',
+    bg: '#C5F442',
   },
   {
-    name: "Call",
-    route: "Call",
-    icon: "phone-portrait",
-    bg: "#C5F442"
+    name: 'Contact',
+    route: 'Contact',
+    icon: 'call',
+    bg: '#C5F442',
   },
   {
-    name: "Chat",
-    route: "Chat",
-    icon: "phone-portrait",
-    bg: "#C5F442"
+    name: 'Chat',
+    route: 'Chat',
+    icon: 'chatbubbles',
+    bg: '#C5F442',
   },
   {
-    name: "Doctor",
-    route: "Doctor",
-    icon: "phone-portrait",
-    bg: "#C5F442"
+    name: 'Doctors',
+    route: 'Doctors',
+    icon: <FontAwesome name="stethoscope" style={{ color: '#777', fontSize: 26, width: 30 }} />,
+    bg: '#C5F442',
   },
   {
-    name: "History",
-    route: "History",
-    icon: "phone-portrait",
-    bg: "#C5F442"
+    name: 'Departments/Services',
+    route: 'Services',
+    icon: <FontAwesome name="group" style={{ color: '#777', fontSize: 26, width: 30 }} />,
+    bg: '#C5F442',
+  },
+  /*{
+    name: 'History',
+    route: 'History',
+    icon: 'phone-portrait',
+    bg: '#C5F442',
+  },*/
+  {
+    name: 'Tour',
+    route: 'Tour',
+    icon: 'images',
+    bg: '#C5F442',
   },
   {
-    name: "Tour",
-    route: "Tour",
-    icon: "phone-portrait",
-    bg: "#C5F442"
-  },
-  {
-    name: "Rating",
-    route: "Rating",
-    icon: "phone-portrait",
-    bg: "#C5F442"
+    name: 'Rating',
+    route: 'Rating',
+    icon: 'star',
+    bg: '#C5F442',
   },
 ];
 
@@ -64,31 +64,29 @@ class SideBar extends Component {
     super(props);
     this.state = {
       shadowOffsetWidth: 1,
-      shadowRadius: 4
+      shadowRadius: 4,
     };
   }
 
   render() {
+    let renderIcon = icon => {
+      if (typeof icon == 'string') {
+        return <Icon active name={icon} style={{ color: '#777', fontSize: 26, width: 30 }} />;
+      } else {
+        return icon;
+      }
+    };
     return (
       <Container>
-        <Content
-          bounces={false}
-          style={{ flex: 1, backgroundColor: "#fff", top: -1 }}
-        >
+        <Content bounces={false} style={{ flex: 1, backgroundColor: '#fff', top: -1 }}>
+          <Image source={drawerCover} style={styles.drawerCover} />
+          <Image square style={styles.drawerImage} source={drawerImage} />
           <List
             dataArray={datas}
             renderRow={data =>
-              <ListItem
-                button
-                noBorder
-                onPress={() => this.props.navigation.navigate(data.route)}
-              >
+              <ListItem button noBorder onPress={() => this.props.navigation.navigate(data.route)}>
                 <Left>
-                  <Icon
-                    active
-                    name={data.icon}
-                    style={{ color: "#777", fontSize: 26, width: 30 }}
-                  />
+                  {renderIcon(data.icon)}
                   <Text style={styles.text}>
                     {data.name}
                   </Text>
@@ -100,12 +98,9 @@ class SideBar extends Component {
                         borderRadius: 3,
                         height: 25,
                         width: 72,
-                        backgroundColor: data.bg
-                      }}
-                    >
-                      <Text
-                        style={styles.badgeText}
-                      >{`${data.types} Types`}</Text>
+                        backgroundColor: data.bg,
+                      }}>
+                      <Text style={styles.badgeText}>{`${data.types} Types`}</Text>
                     </Badge>
                   </Right>}
               </ListItem>}

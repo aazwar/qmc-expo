@@ -1,18 +1,5 @@
-import React, { Component } from "react";
-import {
-  Container,
-  Header,
-  Title,
-  Content,
-  Text,
-  Button,
-  Icon,
-  Footer,
-  FooterTab,
-  Left,
-  Right,
-  Body
-} from "native-base";
+import React, { Component } from 'react';
+import { Container, Header, Title, Content, Text, Button, Icon, Footer, FooterTab, Left, Right, Body } from 'native-base';
 
 import styles from './styles';
 
@@ -22,10 +9,7 @@ export default class History extends Component {
       <Container style={styles.container}>
         <Header>
           <Left>
-            <Button
-              transparent
-              onPress={() => this.props.navigation.navigate("DrawerOpen")}
-            >
+            <Button transparent onPress={() => this.props.navigation.navigate('DrawerOpen')}>
               <Icon name="ios-menu" />
             </Button>
           </Left>

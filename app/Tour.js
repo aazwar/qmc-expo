@@ -1,51 +1,36 @@
-import React, { Component } from "react";
-import {
-  Container,
-  Header,
-  Title,
-  Content,
-  Text,
-  Button,
-  Icon,
-  Footer,
-  FooterTab,
-  Left,
-  Right,
-  Body
-} from "native-base";
+import React, { Component } from 'react';
+import { WebView } from 'react-native';
+import { Container, Header, Title, Content, Text, Button, Icon, Footer, FooterTab, Left, Right, Body } from 'native-base';
 
-import styles from './styles';
+import styles, { deviceWidth, deviceHeight } from './styles';
 
 export default class Tour extends Component {
+  componentDidMount() {
+    Expo.ScreenOrientation.allow(Expo.ScreenOrientation.Orientation.LANDSCAPE);
+  }
+
+  componentWillUnmount() {
+    Expo.ScreenOrientation.allow(Expo.ScreenOrientation.Orientation.PORTRAIT);
+  }
+
   render() {
     return (
       <Container style={styles.container}>
         <Header>
           <Left>
-            <Button
-              transparent
-              onPress={() => this.props.navigation.navigate("DrawerOpen")}
-            >
+            <Button transparent onPress={() => this.props.navigation.navigate('DrawerOpen')}>
               <Icon name="ios-menu" />
             </Button>
           </Left>
           <Body>
-            <Title>Tour</Title>
+            <Title>QMC Tour</Title>
           </Body>
           <Right />
         </Header>
 
-        <Content padder>
-          <Text>Content goes here</Text>
+        <Content>
+          <WebView source={{ uri: 'http://kdakw.com/clients/qmc/0.html' }} style={{ width: deviceWidth, height: deviceHeight }} />
         </Content>
-
-        <Footer>
-          <FooterTab>
-            <Button active full>
-              <Text>Footer</Text>
-            </Button>
-          </FooterTab>
-        </Footer>
       </Container>
     );
   }
