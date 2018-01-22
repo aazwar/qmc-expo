@@ -25,10 +25,10 @@ export default class Appointment extends React.Component {
         </Header>
         <Tabs initialPage={0}>
           <Tab heading="Booking">
-            <Booking />
+            <Booking {...this.props} />
           </Tab>
           <Tab heading="Appointments">
-            <Appointments />
+            <Appointments {...this.props} />
           </Tab>
         </Tabs>
       </Container>

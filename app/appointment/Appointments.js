@@ -4,7 +4,13 @@ import { Container, Header, Title, Content, Text, Button, Icon, Footer, FooterTa
 
 import styles, { deviceWidth, deviceHeight } from '../styles';
 
+const departments = require('./departments.js').default;
+
 export default class Appointments extends Component {
+  async componentWillMount() {
+    console.log(this.props);
+  }
+
   render() {
     return (
       <Container style={styles.container}>

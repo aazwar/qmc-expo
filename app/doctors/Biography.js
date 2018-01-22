@@ -28,7 +28,7 @@ export default class Biography extends Component {
 
         <Content padder>
           <MarkDown>
-            {doctor.biography}{' \n'}
+            {doctor.biography + '\n'}
           </MarkDown>
         </Content>
       </Container>

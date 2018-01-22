@@ -5,8 +5,9 @@ import { Root } from 'native-base';
 
 import Home from './app/Home';
 import Appointment from './app/appointment';
+import About from './app/About';
 import Contact from './app/contact';
-import Chat from './app/Chat';
+import Chat from './app/chat';
 import Doctors from './app/doctors';
 import History from './app/History';
 import Tour from './app/Tour';
@@ -20,6 +21,7 @@ import Setting from './app/Setting';
 
 const screens = {
   Home: { screen: Home },
+  About: { screen: About },
   Appointment: { screen: Appointment },
   Contact: { screen: Contact },
   Chat: { screen: Chat },

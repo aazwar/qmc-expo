@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Image } from 'react-native';
 import { Content, Text, List, ListItem, Icon, Container, Left, Right, Badge } from 'native-base';
-import { FontAwesome, Entypo } from '@expo/vector-icons';
+import { FontAwesome, Entypo, MaterialCommunityIcons } from '@expo/vector-icons';
 
 import styles from './styles';
 
@@ -9,6 +9,30 @@ const drawerCover = require('./assets/drawer-cover.png');
 const drawerImage = require('./assets/quttainah-logo.png');
 
 const datas = [
+  {
+    name: 'Home',
+    route: 'Home',
+    icon: <Icon active ios="ios-home" android="md-home" style={{ color: '#777', fontSize: 26, width: 30 }} />,
+    bg: '#C5F442',
+  },
+  {
+    name: 'About Us',
+    route: 'About',
+    icon: <MaterialCommunityIcons active name="quicktime" style={{ color: '#777', fontSize: 26, width: 30 }} />,
+    bg: '#C5F442',
+  },
+  {
+    name: 'Departments/Services',
+    route: 'Services',
+    icon: <FontAwesome name="group" style={{ color: '#777', fontSize: 26, width: 30 }} />,
+    bg: '#C5F442',
+  },
+  {
+    name: 'Doctors',
+    route: 'Doctors',
+    icon: <FontAwesome name="stethoscope" style={{ color: '#777', fontSize: 26, width: 30 }} />,
+    bg: '#C5F442',
+  },
   {
     name: 'Book an Appointment',
     route: 'Appointment',
@@ -22,21 +46,15 @@ const datas = [
     bg: '#C5F442',
   },
   {
+    name: '360º Virtual Tour',
+    route: 'Tour',
+    icon: 'images',
+    bg: '#C5F442',
+  },
+  {
     name: 'Chat',
     route: 'Chat',
     icon: 'chatbubbles',
-    bg: '#C5F442',
-  },
-  {
-    name: 'Doctors',
-    route: 'Doctors',
-    icon: <FontAwesome name="stethoscope" style={{ color: '#777', fontSize: 26, width: 30 }} />,
-    bg: '#C5F442',
-  },
-  {
-    name: 'Departments/Services',
-    route: 'Services',
-    icon: <FontAwesome name="group" style={{ color: '#777', fontSize: 26, width: 30 }} />,
     bg: '#C5F442',
   },
   /*{
@@ -45,12 +63,6 @@ const datas = [
     icon: 'phone-portrait',
     bg: '#C5F442',
   },*/
-  {
-    name: 'Tour',
-    route: 'Tour',
-    icon: 'images',
-    bg: '#C5F442',
-  },
   {
     name: 'Rating',
     route: 'Rating',

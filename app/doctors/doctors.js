@@ -56,9 +56,9 @@ Dr. encourages you to ask numerous questions regarding your specic procedure as
 You are welcome to contact at any time if you have any questions regarding your procedure, he is very concerned with educating his patients regarding their treatment and feels that every patient is unique and should be well informed to make their experience a pleasant one.`,
   },
   {
-    id: 2,
+    id: 12,
     name: 'Dr. Mustapha Tomsu',
-    image: require('../assets/doc_2.png'),
+    image: require('../assets/doc_12.png'),
     title: 'Head Of Gynecologist & IVF Dept.',
     biography: `• 20 Years’ Experience in the field of infertility and IVF Treatment in UK & Kuwait.
 • Has one of the best success  (pregnancy) rates in IVF treatment in Kuwait and the gulf region.
@@ -85,9 +85,9 @@ Experienced in
 • Management of recurrent miscarriages.`,
   },
   {
-    id: 3,
+    id: 10,
     name: 'Dr. Hanadi Al Badir',
-    image: require('../assets/doc_3.png'),
+    image: require('../assets/doc_10.png'),
     title: 'Head of Family Medicine Dept.',
     biography: `Membership of Royal college of general practitioners.
 • Running obesity clinic since 2004.
@@ -96,9 +96,9 @@ Experienced in
 • Management of obesity before cosmetic surgeries`,
   },
   {
-    id: 4,
+    id: 17,
     name: 'Dr. Wael El Afghani',
-    image: require('../assets/doc_4.png'),
+    image: require('../assets/doc_17.png'),
     title: 'Head of Dental Dept.',
     biography: `Consultant Prosthodontist, BDS London,
 MFGDP (UK) RCS,
@@ -126,16 +126,16 @@ Administers advanced crown and bridge restorations using zirconia, the latest, s
 Provides laser treatments for teeth whitening and bleaching.`,
   },
   {
-    id: 5,
+    id: 2,
     name: 'Dr. Dalia Mahmoud',
-    image: require('../assets/doc_5.png'),
+    image: require('../assets/doc_2.png'),
     title: 'Dermatologist',
     biography: ``,
   },
   {
-    id: 6,
+    id: 3,
     name: 'Dr. Ahmed Abdulsalam',
-    image: require('../assets/doc_6.png'),
+    image: require('../assets/doc_3.png'),
     title: 'Plastic Surgeon',
     biography: `Qualification
  
@@ -171,9 +171,9 @@ Dermabrasion
 PRP for face and hair`,
   },
   {
-    id: 7,
+    id: 15,
     name: 'Dr. Doaa Al Maamoon',
-    image: require('../assets/doc_7.png'),
+    image: require('../assets/doc_15.png'),
     title: 'Gynecologist',
     biography: `-M.B,CH.B (Alexandria-Egypt)
 -Diploma in obstetrics and gynecology 2002-2003 Trinity college Dublin(TCD)Ireland.
@@ -191,9 +191,9 @@ Psycosexual  disorders.Management of climacteric disorders,pelvic pain.Diagnosis
 referral of gynaecological oncology.Management of early pregnancy complications.`,
   },
   {
-    id: 8,
+    id: 18,
     name: 'Dr. Mohammed Mahrous',
-    image: require('../assets/doc_8.png'),
+    image: require('../assets/doc_18.png'),
     title: 'Plastic Surgeon',
     biography: `Master degree in plastic and reconstructive surgery
 - Member of kuwait society of of plastic surgery KSPS
@@ -217,16 +217,16 @@ Plasma injection and methotherpy
 Whole body assessment,detailed explanation of the surgical procedure and the expected result before surgery`,
   },
   {
-    id: 9,
+    id: 16,
     name: 'Dr. Nashat Al Arbid',
-    image: require('../assets/doc_9.png'),
+    image: require('../assets/doc_16.png'),
     title: 'Dermatologist Specialist',
     biography: ``,
   },
   {
-    id: 10,
+    id: 19,
     name: 'Dr. Danilo Stojiljkovic',
-    image: require('../assets/doc_10.png'),
+    image: require('../assets/doc_19.png'),
     title: 'Specialist Plastic Surgery',
     biography: ``,
   },

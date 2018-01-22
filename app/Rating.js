@@ -6,8 +6,8 @@ import styles, { deviceWidth, contentHeight } from './styles';
 
 export default class Rating extends Component {
   render() {
-    let placeUrl =
-      'https://www.google.co.id/search?q=Quttainah+Medical+Center,+Arabian+Gulf+St%D8%8C+Nafi+Bin+Al+Azraq,+Kuwait&ludocid=6691736827747727605#lrd=0x3fcf9ce87e166469:0x5cddd330c44d78f5,3';
+    //let placeUrl =  'https://www.google.co.id/search?q=Quttainah+Medical+Center,+Arabian+Gulf+St%D8%8C+Nafi+Bin+Al+Azraq,+Kuwait&ludocid=6691736827747727605#lrd=0x3fcf9ce87e166469:0x5cddd330c44d78f5,3';
+    let placeUrl = 'https://search.google.com/local/writereview?placeid=ChIJaWQWfuiczz8R9XhNxDDT3Vw';
     return (
       <Container style={styles.container}>
         <Header>

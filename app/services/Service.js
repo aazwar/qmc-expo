@@ -27,7 +27,7 @@ export default class Service extends Component {
 
         <Content padder>
           <MarkDown>
-            {service.desc}
+            {service.desc + '\n'}
           </MarkDown>
         </Content>
 
