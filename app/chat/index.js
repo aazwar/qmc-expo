@@ -3,30 +3,25 @@ import { View } from 'react-native';
 import { Container, Header, Title, Content, Text, Button, Icon, Footer, FooterTab, Left, Right, Body } from 'native-base';
 import { GiftedChat } from 'react-native-gifted-chat';
 
+import Conversation from './Conversation';
 import styles from '../styles';
 
 export default class Chat extends Component {
-  componentWillMount() {
-    this.setState({
-      messages: [
-        {
-          _id: 1,
-          text: 'Hello developer',
-          createdAt: new Date(),
-          user: {
-            _id: 2,
-            name: 'React Native',
-            avatar: 'https://facebook.github.io/react/img/logo_og.png',
-          },
-        },
-      ],
-    });
+  state = { message: []}
+  
+  async componentWillMount() {
+    let conversation = new Conversation();
+    await conversation.load();
+    this.setState(previousState => ({
+      messages: GiftedChat.append(previousState.messages, conversation.messages),
+    }));
   }
 
   onSend(messages = []) {
     this.setState(previousState => ({
       messages: GiftedChat.append(previousState.messages, messages),
     }));
+    console.log(this.state);
   }
 
   render() {
