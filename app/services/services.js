@@ -1,7 +1,7 @@
 export default [
   {
     id: 5,
-    image: require('../assets/dental.jpg'),
+    image: require('../assets/services/dental.jpg'),
     name: `Dental`,
     desc: `We are a team of professionals with a strong commitment to provide the highest quality of dental service where patient satisfaction is our ‘number one commitment’. Our patients deserve the best.
 
@@ -12,7 +12,7 @@ Our Values in our performance`,
   },
   {
     id: 11,
-    image: require('../assets/Dermatology.jpg'),
+    image: require('../assets/services/Dermatology.jpg'),
     name: `Dermatology`,
     desc: `*Injectables*
  
@@ -115,7 +115,7 @@ A natural dimple is usually formed when there is a small defect in the cheek mus
   },
   {
     id: 17,
-    image: require('../assets/IVF.jpg'),
+    image: require('../assets/services/IVF.jpg'),
     name: `Gynecology and IVF`,
     desc: `*Mission:*
 
@@ -193,7 +193,7 @@ _Well Woman Clinic_
   },
   {
     id: 12,
-    image: require('../assets/HAIR.jpg'),
+    image: require('../assets/services/HAIR.jpg'),
     name: `Hair Transplantation`,
     desc: `*HAIR LOSS PHENOMENON:*
  
@@ -248,7 +248,7 @@ It is important to have realistic expectations. One session will not give you th
   },
   {
     id: 13,
-    image: require('../assets/IV.jpg'),
+    image: require('../assets/services/IV.jpg'),
     name: `IV HYDRATION CLINIC`,
     desc: `Our hydration therapy utilizes a common, minimally-invasive procedure to intravenously deliver fluids, medications, vitamins, and other nutritional supplements directly into your bloodstream to provide relief for a multitude of common ailments associated with the accumulative effects of dehydration. Administered by experienced, board-certified physicians and registered nurses, our therapies are safe and highly effective. Your overall health is reflected in your skin. If you are healthy from the inside, it will show in your skin. Our anti aging and skin cleansing IV program can help alleviate and prevent some of the problems that can lead to the aging appearance of the skin.
 
@@ -297,7 +297,7 @@ Contact our skin care specialists and doctors that can explain to you the facts 
   },
   {
     id: 14,
-    image: require('../assets/LAB.jpg'),
+    image: require('../assets/services/LAB.jpg'),
     name: `LABORATORY`,
     desc: `QMC management pledged to establish a medical laboratory that provide a comprehensive laboratory service to QMC patients including biochemistry, Hematology, Bacteriology and Immunology tests that will be available to our patients .
 *Our Vision:*
@@ -326,7 +326,7 @@ We achieve our vision through:
   },
   {
     id: 15,
-    image: require('../assets/non-surgical.jpg'),
+    image: require('../assets/services/non-surgical.jpg'),
     name: `NON SURGICAL SLIMMING`,
     desc: `*NON SURGICAL SLIMMING CLINIC*
  
@@ -366,7 +366,7 @@ AWT results are enhanced with physical exercise and a low fat diet. 2 -3 litres 
   },
   {
     id: 8,
-    image: require('../assets/plastic-surgery.jpg'),
+    image: require('../assets/services/plastic-surgery.jpg'),
     name: `Plastic Surgery`,
     desc: `- Breast Surgery
 - Breast Augmentation
@@ -479,7 +479,7 @@ When the procedure is preformed alone, and not with facelift, it is generally do
   },
   {
     id: 16,
-    image: require('../assets/skin.jpg'),
+    image: require('../assets/services/skin.jpg'),
     name: `SKIN CARE AND BEAUTY`,
     desc: `*Murad Skin Care Line*
 At QMC we are proud to be one of the offcial certified Murad Skin Care clinics in Kuwait. We use Murad USAskin care professional products in our facials. We have exclusive acne lines, whitening lines, anti aging lines andpigmentation lines. Our staft are educated in the use and eftects of all Murad products and will explain to youany products you would also continue to use at home if needed. See more details and product lines on:

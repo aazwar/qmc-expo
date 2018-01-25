@@ -4,6 +4,9 @@ import { Container, Header, Title, Content, Text, Button, Icon, Footer, FooterTa
 import styles, { deviceWidth, contentHeight } from './styles';
 
 export default class Home extends Component {
+  componentWillMount() {
+    Expo.ScreenOrientation.allow(Expo.ScreenOrientation.Orientation.PORTRAIT);
+  }
   render() {
     return (
       <Container style={styles.container}>

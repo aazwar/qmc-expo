@@ -2,7 +2,7 @@ export default [
   {
     id: 1,
     name: 'Dr. Adel Quttainah',
-    image: require('../assets/doc_1.png'),
+    image: require('../assets/doctors/doc_1.png'),
     title: 'Consultant Plastic surgeon and CMO',
     biography: `*Education / Fellowships:*
 
@@ -18,9 +18,9 @@ Performed many cosmetic procedures including rhinoplasty, rhytidectomy (face lif
 
 *Plastic Surgery.*
 
-Dr. Quttainah has also been visiting surgeon in Rio de Janiero, Brazil with Dr. Ivo Pitanguy specialist in cosmetic surgery in Brazil Invited faculty lecturer at 31st Annual Meeting of Canadian Society of Aesthetic Plastic Surgeons Quebec City, Quebec Volunteer surgery of cle lip and palate in Karachi, Pakistan.
+Dr. Quttainah has also been visiting surgeon in Rio de Janiero, Brazil with Dr. Ivo Pitanguy specialist in cosmetic surgery in Brazil Invited faculty lecturer at 31st Annual Meeting of Canadian Society of Aesthetic Plastic Surgeons Quebec City, Quebec Volunteer surgery of cleft lip and palate in Karachi, Pakistan.
 
-Dr. Quttainah is a Board Certi­ed Plastic Surgeon of e Royal College of Physicians and Surgeons of Canada. as well as board eligible for the American Board of Plastic Surgery He is currently a member of numerous societies including the Canadian Society of Plastic Surgeons, American Society of Plastic Surgeons, Irish Medical Council, Graduate of the Medical Council of Canada as well as a member of Interplast, a volunteer group of surgeons who travel to third world countries to perform surgery on affected children.
+Dr. Quttainah is a Board Certi­ed Plastic Surgeon of Le Royal College of Physicians and Surgeons of Canada. as well as board eligible for the American Board of Plastic Surgery He is currently a member of numerous societies including the Canadian Society of Plastic Surgeons, American Society of Plastic Surgeons, Irish Medical Council, Graduate of the Medical Council of Canada as well as a member of Interplast, a volunteer group of surgeons who travel to third world countries to perform surgery on affected children.
 
 Staff plastic surgeon Al-Babtain Center for Plastic Surgery, Kuwait Consultant Plastic Surgeon SAAD Specialist Hospital Skin and Reconstructive Plastic Surgery Director, Laser and Skin Care Clinic 2006 – opened kuwaits ­rst multi services cosmetic plastic surgery clinic. The cosmetic surgery clinic which continue to operate with 2 dermatologists + 3 steps plastic surgeons as well as skin care + laser dept 2008 – Introduced the ­rst dases of non – strip technique hair transplant – Toronto hair institute for hair loss and transplant 2016 – QMC – opened largest cosmetic surgery VIP Centre Shaab – Kuwait with multiple operations theatres in in patient suites.
 
@@ -54,7 +54,7 @@ You are welcome to contact at any time if you have any questions regarding your 
   {
     id: 12,
     name: 'Dr. Mustapha Tomsu',
-    image: require('../assets/doc_12.png'),
+    image: require('../assets/doctors/doc_12.png'),
     title: 'Head Of Gynecologist & IVF Dept.',
     biography: `• 20 Years’ Experience in the field of infertility and IVF Treatment in UK & Kuwait.
 • Has one of the best success  (pregnancy) rates in IVF treatment in Kuwait and the gulf region.
@@ -78,7 +78,7 @@ You are welcome to contact at any time if you have any questions regarding your 
   {
     id: 10,
     name: 'Dr. Hanadi Al Badir',
-    image: require('../assets/doc_10.png'),
+    image: require('../assets/doctors/doc_10.png'),
     title: 'Head of Family Medicine Dept.',
     biography: `Membership of Royal college of general practitioners.
 • Running obesity clinic since 2004.
@@ -89,7 +89,7 @@ You are welcome to contact at any time if you have any questions regarding your 
   {
     id: 17,
     name: 'Dr. Wael El Afghani',
-    image: require('../assets/doc_17.png'),
+    image: require('../assets/doctors/doc_17.png'),
     title: 'Head of Dental Dept.',
     biography: `Consultant Prosthodontist, BDS London,
 MFGDP (UK) RCS,
@@ -111,14 +111,14 @@ Msc (Implant Dentistry)
   {
     id: 2,
     name: 'Dr. Dalia Mahmoud',
-    image: require('../assets/doc_2.png'),
+    image: require('../assets/doctors/doc_2.png'),
     title: 'Dermatologist',
     biography: ``,
   },
   {
     id: 3,
     name: 'Dr. Ahmed Abdulsalam',
-    image: require('../assets/doc_3.png'),
+    image: require('../assets/doctors/doc_3.png'),
     title: 'Plastic Surgeon',
     biography: `Qualification
  
@@ -156,7 +156,7 @@ Scholarship UZ-KU Leuven, Belgium
   {
     id: 15,
     name: 'Dr. Doaa Al Maamoon',
-    image: require('../assets/doc_15.png'),
+    image: require('../assets/doctors/doc_15.png'),
     title: 'Gynecologist',
     biography: `-M.B,CH.B (Alexandria-Egypt)
 - Diploma in obstetrics and gynecology 2002-2003 Trinity college Dublin(TCD)Ireland.
@@ -175,7 +175,7 @@ Experience in Management of menstrual and ovulatory disorders without surgical i
   {
     id: 18,
     name: 'Dr. Mohammed Mahrous',
-    image: require('../assets/doc_18.png'),
+    image: require('../assets/doctors/doc_18.png'),
     title: 'Plastic Surgeon',
     biography: `Master degree in plastic and reconstructive surgery
 - Member of kuwait society of of plastic surgery KSPS
@@ -201,14 +201,14 @@ Experience in Management of menstrual and ovulatory disorders without surgical i
   {
     id: 16,
     name: 'Dr. Nashat Al Arbid',
-    image: require('../assets/doc_16.png'),
+    image: require('../assets/doctors/doc_16.png'),
     title: 'Dermatologist Specialist',
     biography: ``,
   },
   {
     id: 19,
     name: 'Dr. Danilo Stojiljkovic',
-    image: require('../assets/doc_19.png'),
+    image: require('../assets/doctors/doc_19.png'),
     title: 'Specialist Plastic Surgery',
     biography: ``,
   },

@@ -10,7 +10,8 @@ import Contact from './app/contact';
 import Chat from './app/chat';
 import Doctors from './app/doctors';
 import History from './app/History';
-import Tour from './app/Tour';
+import Tour from './app/tour';
+import TourView from './app/tour/Tour';
 import Rating from './app/Rating';
 import SideBar from './app/SideBar';
 import Map from './app/contact/MapScreen';
@@ -28,6 +29,7 @@ const screens = {
   Doctors: { screen: Doctors },
   History: { screen: History },
   Tour: { screen: Tour },
+  TourView: { screen: TourView },
   Rating: { screen: Rating },
   Map: { screen: Map },
   Biography: { screen: Biography },
