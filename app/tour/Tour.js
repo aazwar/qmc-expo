@@ -6,14 +6,15 @@ import styles, { deviceWidth, deviceHeight } from '../styles';
 const places = require('./places.js').default;
 
 export default class Tour extends Component {
-  state = { ready: false };
   componentDidMount() {
     Expo.ScreenOrientation.allow(Expo.ScreenOrientation.Orientation.LANDSCAPE);
-    this.setState({ ready: true });
+  }
+
+  componentWillUnmount() {
+    Expo.ScreenOrientation.allow(Expo.ScreenOrientation.Orientation.PORTRAIT);
   }
 
   render() {
-    if (!this.state.ready) return null;
     let id = this.props.navigation.state.params.id;
     let place = places.filter(e => e.id == id)[0];
     return (

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ImageBackground } from 'react-native';
+import { Linking, ImageBackground } from 'react-native';
 import {
   Container,
   Header,
@@ -16,29 +16,12 @@ import {
   H3,
   Toast,
 } from 'native-base';
-import styles, { deviceWidth, contentHeight } from './styles';
+import styles, { deviceWidth, contentHeight } from '../styles';
 
-import { register, ask_permission } from './Util';
-
-export default class Home extends Component {
-  componentWillMount() {
-    Expo.ScreenOrientation.allow(Expo.ScreenOrientation.Orientation.PORTRAIT);
-    let { setting } = this.props.screenProps;
-    if (!setting.name) {
-      this.props.navigation.navigate('Profile');
-    }
-
-    if (!ask_permission()) {
-      Toast.show({
-        text: 'App permission is not granted!',
-        position: 'bottom',
-        buttonText: 'Ok',
-        type: 'danger',
-        duration: 3000,
-      });
-    }
-
-    register(setting);
+export default class CallUs extends Component {
+  componentDidMount() {
+    Linking.openURL('tel:+9651888883');
+    this.props.navigation.navigate('Home');
   }
 
   render() {
@@ -56,7 +39,7 @@ export default class Home extends Component {
           <Right />
         </Header>
         <ImageBackground
-          source={require('./assets/splash.png')}
+          source={require('../assets/splash.png')}
           style={{ height: contentHeight, flex: 1 }}
           imageStyle={{ resizeMode: 'stretch' }}
         />

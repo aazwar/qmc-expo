@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Container, Header, Title, Content, Text, Button, Icon, Footer, FooterTab, Left, Right, Body } from 'native-base';
+import { Image, AsyncStorage } from 'react-native';
 
-import styles from './styles';
+import styles, { deviceWidth } from './styles';
 import MarkDown from './MarkDown';
 
 export default class About extends Component {
@@ -17,37 +18,24 @@ export default class About extends Component {
           <Body>
             <Title>About QMC</Title>
           </Body>
-          <Right />
+          <Right>
+            <Button
+              transparent
+              onPress={() => {
+                AsyncStorage.clear();
+              }}>
+              <Icon name="ios-refresh" />
+            </Button>
+          </Right>
         </Header>
 
-        <Content padder>
-          <MarkDown>
-            {`*Practice Philosophy*
+        <Content>
+          <Image style={{ width: deviceWidth, height: 501 * deviceWidth / 900 }} source={require('./assets/about-us.jpg')} />
+          <Text />
+          <MarkDown style={{ padding: 10, fontSize: 16 }}>
+            {`QMC *"Quttainah Medical Center"* is complete medical center in Kuwait which provide highest standard of medical services.
 
-Dr. Quttainah is dedicated to the highest standard of patient safety, care and surgical excellence. Full consultations are given to each patient allowing for individualized care and treatment. Our clinic strives to achieve the results you desire, and through education and communication we can ensure you are satisfied with your results. Dr. Quttainah uses the latest technology, advanced techniques, specialized training and skills to give his patients the best possible results from their cosmetic or reconstructive procedures.
- 
-Using his extensive background in cosmetic and reconstructive microsurgery, Dr. Quttainah brings to each patient a unique combination of advanced surgical experience that will maximize their cosmetic enhancements. We understand that plastic surgery is a life changing decision, and our main goal is to allow our patients the opportunity to communicate their needs in a comfortable and professional atmosphere, ensuring privacy and confidentiality regarding all treatments.
-      
-*Our Vision*
-      
-To provide each patient with the world-class care, exceptional service and results.
-      
-*Our Mission*
-
-Our mission at the Quttainah Medical Center is to provide a safe, comfortable and effective service to our patients. We strive to give exceptional service and leading edge treatmentsl. We strive for optimum results and complete satisfaction.
- 
-We base our treatments on extensive experience and clinical evidence. Our goal is to educate our patients an give each patient individualized treatment according to their needs. We will ensure that you will have a pleasant experience and will receive expert care with exceptional results.
-
-*Our Values*
-      
-- Compassion
-- A commitment to quality
-- Accountability
-- Respect for the individual innovation
-- Research based treatments
-- Highly qualified and Educated Staff
-
-`}
+Quttainah uses the latest technology, advanced techniques, specialized training and skills to give his patients the best possible results from their cosmetic or reconstructive procedures.`}
           </MarkDown>
         </Content>
       </Container>

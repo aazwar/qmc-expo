@@ -71,7 +71,7 @@ export default class ContactHome extends React.Component {
           </Separator>
           <ListItem>
             <Body>
-              <Text>Lina Bazi</Text>
+              <Text>Lina Bazzi</Text>
               <Text note>Patient Liason </Text>
             </Body>
           </ListItem>
@@ -83,10 +83,9 @@ export default class ContactHome extends React.Component {
             'mailto:L.bazzi@qmc-kuwait.com',
             'black'
           )}
+          {this.info('info@qmc-kuwait.com', <Icon ios="ios-mail" android="md-mail" />, 'mailto:info@qmc-kuwait.com', 'black')}
           <ListItem />
           {this.info('+965-1888883-(570)', 'phone', 'tel:+965-1888883,570', 'green', 'Admission')}
-          {this.info('+965-1888883-(481)', 'phone', 'tel:+965-1888883,481', 'green', 'Accounting 1')}
-          {this.info('+965-1888883-(482)', 'phone', 'tel:+965-1888883,482', 'green', 'Accounting 2')}
           {this.info('+965-1888883-(681)', 'phone', 'tel:+965-1888883,681', 'green', 'Marketing/Social Media')}
           {this.info('+965-99248844', 'phone', 'tel:+965-99248844', 'green', 'Pharmacy')}
           {this.info('+965-1888883-(410)', 'phone', 'tel:+965-1888883,410', 'green', 'Café/Museum')}

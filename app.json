@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "qmc-expo",
-    "description": "This project is really great.",
+    "name": "QMC App",
+    "description": "Quttainah Medical Center app",
     "slug": "qmc-expo",
     "privacy": "public",
     "sdkVersion": "25.0.0",
@@ -9,13 +9,29 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./app/assets/icon.png",
+    "loading": {
+      "hideExponentText": true
+    },
     "splash": {
       "image": "./app/assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
-    }
+      "supportsTablet": true,
+      "bundleIdentifier": "com.kdakw.qmc-app",
+      "buildNumber": "1",      
+      "loadJSInBackgroundExperimental": true
+    },
+    "android": {
+      "package": "com.kdakw.qmcapp",
+      "permissions": ["ACCESS_COARSE_LOCATION", "ACCESS_FINE_LOCATION", "MANAGE_DOCUMENTS", "VIBRATE"],
+      "versionCode": 1
+    },
+    "assetBundlePatterns": [
+      "app/assets/**",
+      "node_modules/@expo/vector-icons/fonts/*",
+      "node_modules/native-base/Fonts/*"
+    ]    
   }
 }

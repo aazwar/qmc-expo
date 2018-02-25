@@ -5,9 +5,11 @@
     "expo": "^25.0.0",
     "moment": "^2.20.1",
     "native-base": "^2.3.5",
-    "react": "16.0.0",
+    "react": "16.2.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-25.0.0.tar.gz",
     "react-native-gifted-chat": "^0.3.0",
+    "react-native-hud-view": "^1.2.2",
+    "react-native-image-gallery": "^2.1.5",
     "react-native-material-dropdown": "^0.6.1",
     "react-native-modal-datetime-picker": "^4.13.0",
     "react-navigation": "^1.0.0-beta.27"

@@ -39,6 +39,6 @@ export default [
     id: 7,
     name: `IVF Patient Suites / IVF LAB / Surgical Theatre`,
     image: require('../assets/places/IVF-Patient.jpg'),
-    url: 'http://kdakw.com/clients/qmc/5-floor.html',
+    url: 'http://kdakw.com/clients/qmc/6-floor.html',
   },
 ];

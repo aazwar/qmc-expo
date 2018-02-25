@@ -1,6 +1,7 @@
 import Storable from '../Storable';
 
 export default class Conversation extends Storable {
+  registered = false;
   push_token = '';
   channel_id = '';
   messages = [

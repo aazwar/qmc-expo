@@ -2,7 +2,7 @@ export default [
   {
     id: 1,
     name: 'Dr. Adel Quttainah',
-    image: require('../assets/doctors/doc_1.png'),
+    image: require('../assets/doctors/doc_1.jpg'),
     title: 'Consultant Plastic surgeon and CMO',
     biography: `*Education / Fellowships:*
 
@@ -54,7 +54,7 @@ You are welcome to contact at any time if you have any questions regarding your 
   {
     id: 12,
     name: 'Dr. Mustapha Tomsu',
-    image: require('../assets/doctors/doc_12.png'),
+    image: require('../assets/doctors/doc_12.jpg'),
     title: 'Head Of Gynecologist & IVF Dept.',
     biography: `• 20 Years’ Experience in the field of infertility and IVF Treatment in UK & Kuwait.
 • Has one of the best success  (pregnancy) rates in IVF treatment in Kuwait and the gulf region.
@@ -78,7 +78,7 @@ You are welcome to contact at any time if you have any questions regarding your 
   {
     id: 10,
     name: 'Dr. Hanadi Al Badir',
-    image: require('../assets/doctors/doc_10.png'),
+    image: require('../assets/doctors/doc_10.jpg'),
     title: 'Head of Family Medicine Dept.',
     biography: `Membership of Royal college of general practitioners.
 • Running obesity clinic since 2004.
@@ -89,7 +89,7 @@ You are welcome to contact at any time if you have any questions regarding your 
   {
     id: 17,
     name: 'Dr. Wael El Afghani',
-    image: require('../assets/doctors/doc_17.png'),
+    image: require('../assets/doctors/doc_17.jpg'),
     title: 'Head of Dental Dept.',
     biography: `Consultant Prosthodontist, BDS London,
 MFGDP (UK) RCS,
@@ -111,14 +111,14 @@ Msc (Implant Dentistry)
   {
     id: 2,
     name: 'Dr. Dalia Mahmoud',
-    image: require('../assets/doctors/doc_2.png'),
+    image: require('../assets/doctors/doc_2.jpg'),
     title: 'Dermatologist',
     biography: ``,
   },
   {
     id: 3,
     name: 'Dr. Ahmed Abdulsalam',
-    image: require('../assets/doctors/doc_3.png'),
+    image: require('../assets/doctors/doc_3.jpg'),
     title: 'Plastic Surgeon',
     biography: `Qualification
  
@@ -156,7 +156,7 @@ Scholarship UZ-KU Leuven, Belgium
   {
     id: 15,
     name: 'Dr. Doaa Al Maamoon',
-    image: require('../assets/doctors/doc_15.png'),
+    image: require('../assets/doctors/doc_15.jpg'),
     title: 'Gynecologist',
     biography: `-M.B,CH.B (Alexandria-Egypt)
 - Diploma in obstetrics and gynecology 2002-2003 Trinity college Dublin(TCD)Ireland.
@@ -175,7 +175,7 @@ Experience in Management of menstrual and ovulatory disorders without surgical i
   {
     id: 18,
     name: 'Dr. Mohammed Mahrous',
-    image: require('../assets/doctors/doc_18.png'),
+    image: require('../assets/doctors/doc_18.jpg'),
     title: 'Plastic Surgeon',
     biography: `Master degree in plastic and reconstructive surgery
 - Member of kuwait society of of plastic surgery KSPS
@@ -201,14 +201,14 @@ Experience in Management of menstrual and ovulatory disorders without surgical i
   {
     id: 16,
     name: 'Dr. Nashat Al Arbid',
-    image: require('../assets/doctors/doc_16.png'),
+    image: require('../assets/doctors/doc_16.jpg'),
     title: 'Dermatologist Specialist',
     biography: ``,
   },
   {
     id: 19,
     name: 'Dr. Danilo Stojiljkovic',
-    image: require('../assets/doctors/doc_19.png'),
+    image: require('../assets/doctors/doc_19.jpg'),
     title: 'Specialist Plastic Surgery',
     biography: ``,
   },

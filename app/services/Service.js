@@ -22,7 +22,17 @@ export default class Service extends Component {
               {service.name}
             </Title>
           </Body>
-          <Right />
+          <Right>
+            <Button transparent onPress={() => this.props.navigation.navigate('Review', { id: service.id })}>
+              <Icon name="ios-star-half-outline" />
+            </Button>
+            {service.id == 8 &&
+              <Button
+                transparent
+                onPress={() => this.props.navigation.navigate('Gallery', { dep_id: this.props.navigation.state.params.id })}>
+                <Icon name="ios-images-outline" />
+              </Button>}
+          </Right>
         </Header>
 
         <Content padder>

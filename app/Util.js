@@ -1,0 +1,84 @@
+import Setting from './Setting';
+import Conversation from './chat/Conversation';
+
+//const SERVER = 'http://192.168.0.32:8080';
+const SERVER = 'http://sandbox.fuwafuwa.web.id/qmc';
+
+async function register(setting, conversation) {
+  if (!setting) {
+    setting = new Setting();
+    await setting.load();
+  }
+  if (!conversation) {
+    conversation = new Conversation();
+    await conversation.load();
+  }
+
+  if (conversation.registered) return;
+
+  if (!conversation.push_token) {
+    conversation.push_token = await Notifications.getExpoPushTokenAsync();
+    conversation.channel_id = `QMC-${uuid.v4()}`;
+    conversation.store();
+  }
+
+  let name = setting.name;
+  if (!name) name = 'QMC_' + conversation.channel_id.replace(/(.*-)/, '');
+  let response = fetch(`${SERVER}/ajax/chat/register`, {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      name,
+      channel_id: conversation.channel_id,
+      push_token: conversation.push_token,
+    }),
+  }).then(response => {
+    if (response.status == 200 && response._bodyText == 'Success') {
+      conversation.registered = true;
+      conversation.store();
+    }
+  });
+}
+
+function change_name(channel_id, name) {
+  let response = fetch(`${SERVER}/ajax/chat/change-name`, {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      name,
+      channel_id,
+    }),
+  });
+}
+
+async function ask_permission() {
+  try {
+    const { status: existingStatus } = await Permissions.getAsync(Permissions.NOTIFICATIONS);
+    let finalStatus = existingStatus;
+
+    // only ask if permissions have not already been determined, because
+    // iOS won't necessarily prompt the user a second time.
+    if (existingStatus !== 'granted') {
+      // Android remote notification permissions are granted during the app
+      // install, so this will only ask on iOS
+      const { status } = await Permissions.askAsync(Permissions.NOTIFICATIONS);
+      finalStatus = status;
+    }
+
+    // Stop here if the user did not grant permissions
+    if (finalStatus !== 'granted') {
+      return false;
+    }
+  } catch (err) {
+    return false;
+  }
+  return true;
+}
+
+export { register, change_name, ask_permission, SERVER };

@@ -24,7 +24,7 @@ export default class MarkDown extends React.Component {
                 break;
               case '*':
                 return (
-                  <Text key={i} style={{ fontWeight: 'bold' }}>
+                  <Text key={i} style={{ fontFamily: 'medula-one', fontSize: 24 }}>
                     {t.slice(1, -1)}
                   </Text>
                 );

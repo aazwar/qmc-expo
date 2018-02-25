@@ -6,4 +6,5 @@ export default class Setting extends Storable {
   mobile = '';
   birth_date = '';
   appointments = [];
+  reviews = [];
 }

@@ -1,7 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, AsyncStorage } from 'react-native';
 import { StackNavigator, DrawerNavigator } from 'react-navigation';
 import { Root } from 'native-base';
+import { Font } from 'expo';
 
 import Home from './app/Home';
 import Appointment from './app/appointment';
@@ -9,16 +10,20 @@ import About from './app/About';
 import Contact from './app/contact';
 import Chat from './app/chat';
 import Doctors from './app/doctors';
-import History from './app/History';
 import Tour from './app/tour';
 import TourView from './app/tour/Tour';
-import Rating from './app/Rating';
 import SideBar from './app/SideBar';
 import Map from './app/contact/MapScreen';
 import Biography from './app/doctors/Biography';
 import Services from './app/services';
 import Service from './app/services/Service';
 import Setting from './app/Setting';
+import Profile from './app/profile';
+import CallUs from './app/callus';
+import Gallery from './app/gallery';
+import GalleryDetail from './app/gallery/Detail';
+import Review from './app/services/Review';
+import WriteReview from './app/services/WriteReview';
 
 const screens = {
   Home: { screen: Home },
@@ -27,14 +32,18 @@ const screens = {
   Contact: { screen: Contact },
   Chat: { screen: Chat },
   Doctors: { screen: Doctors },
-  History: { screen: History },
   Tour: { screen: Tour },
   TourView: { screen: TourView },
-  Rating: { screen: Rating },
+  Profile: { screen: Profile },
   Map: { screen: Map },
   Biography: { screen: Biography },
   Services: { screen: Services },
   Service: { screen: Service },
+  CallUs: { screen: CallUs },
+  Gallery: { screen: Gallery },
+  GalleryDetail: { screen: GalleryDetail },
+  Review: { screen: Review },
+  WriteReview: { screen: WriteReview },
 };
 
 const Drawer = DrawerNavigator(screens, {
@@ -58,6 +67,9 @@ const AppNavigator = StackNavigator(
 
 let setting = new Setting();
 setting.load();
+Font.loadAsync({
+  'medula-one': require('./app/assets/fonts/MedulaOne-Regular.ttf'),
+});
 
 export default () =>
   <Root>

@@ -18,6 +18,7 @@ import {
   Badge,
 } from 'native-base';
 import { Image } from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons';
 
 import styles from '../styles';
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Image } from 'react-native';
 import { Content, Text, List, ListItem, Icon, Container, Left, Right, Badge } from 'native-base';
-import { FontAwesome, Entypo, MaterialCommunityIcons } from '@expo/vector-icons';
+import { FontAwesome, Entypo, MaterialCommunityIcons, Feather } from '@expo/vector-icons';
 
 import styles from './styles';
 
@@ -22,13 +22,19 @@ const datas = [
     bg: '#C5F442',
   },
   {
+    name: 'Call Us',
+    route: 'CallUs',
+    icon: <Feather active name="phone-call" style={{ color: '#777', fontSize: 26, width: 30 }} />,
+    bg: '#C5F442',
+  },
+  {
     name: 'Departments/Services',
     route: 'Services',
     icon: <FontAwesome name="group" style={{ color: '#777', fontSize: 26, width: 30 }} />,
     bg: '#C5F442',
   },
   {
-    name: 'Doctors',
+    name: 'Find a Doctor',
     route: 'Doctors',
     icon: <FontAwesome name="stethoscope" style={{ color: '#777', fontSize: 26, width: 30 }} />,
     bg: '#C5F442',
@@ -46,7 +52,7 @@ const datas = [
     bg: '#C5F442',
   },
   {
-    name: '360º Virtual Tour',
+    name: 'Take a tour (360º)',
     route: 'Tour',
     icon: 'images',
     bg: '#C5F442',
@@ -57,16 +63,16 @@ const datas = [
     icon: 'chatbubbles',
     bg: '#C5F442',
   },
-  /*{
-    name: 'History',
-    route: 'History',
-    icon: 'phone-portrait',
-    bg: '#C5F442',
-  },*/
   {
-    name: 'Rating',
-    route: 'Rating',
-    icon: 'star',
+    name: 'Case History',
+    route: 'Gallery',
+    icon: 'ios-images-outline',
+    bg: '#C5F442',
+  },
+  {
+    name: 'Profile',
+    route: 'Profile',
+    icon: 'ios-person',
     bg: '#C5F442',
   },
 ];

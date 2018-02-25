@@ -3,28 +3,20 @@ import { View } from 'react-native';
 import { Permissions, Notifications } from 'expo';
 import { Container, Header, Title, Content, Text, Button, Icon, Footer, FooterTab, Left, Right, Body } from 'native-base';
 import { GiftedChat } from 'react-native-gifted-chat';
-import uuid from 'uuid';
 
+import Chat from './Chat';
+import Register from './Register';
 import Conversation from './Conversation';
 import styles from '../styles';
 
-export default class Chat extends Component {
-  state = { message: [] };
+export default class ChatRoot extends Component {
+  state = { ready: false, message: [] };
 
   async componentWillMount() {
     let conversation = new Conversation();
     this.conversation = conversation;
     await conversation.load();
-    if (!conversation.push_token) {
-      try {
-        conversation.push_token = await Notifications.getExpoPushTokenAsync();
-        conversation.channel_id = await `QMC-${uuid.v4()}`;
-        console.log(conversation);
-      } catch (err) {}
-    }
-    this.setState(previousState => ({
-      messages: GiftedChat.append(previousState.messages, conversation.messages),
-    }));
+    this.setState({ ready: true });
   }
 
   componentWillUnmount() {
@@ -32,15 +24,12 @@ export default class Chat extends Component {
     conversation.store();
   }
 
-  onSend(messages = []) {
-    this.setState(previousState => ({
-      messages: GiftedChat.append(previousState.messages, messages),
-    }));
-    console.log(this.state);
+  reload() {
+    this.forceUpdate();
   }
 
   render() {
-    const user = [];
+    if (!this.state.ready) return null;
     return (
       <Container style={styles.container}>
         <Header>
@@ -50,21 +39,13 @@ export default class Chat extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>1-on-1 Chat</Title>
+            <Title>Chat with QMC</Title>
           </Body>
           <Right />
         </Header>
-
-        <View style={{ flex: 1 }}>
-          <GiftedChat
-            renderAvatar={null}
-            messages={this.state.messages}
-            onSend={messages => this.onSend(messages)}
-            user={{
-              _id: 1,
-            }}
-          />
-        </View>
+        {this.conversation.channel_id
+          ? <Chat {...this.props} conversation={this.conversation} />
+          : <Register {...this.props} conversation={this.conversation} reload={this.reload.bind(this)} />}
       </Container>
     );
   }
