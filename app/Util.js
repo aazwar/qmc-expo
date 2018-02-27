@@ -1,8 +1,9 @@
+import { Notifications, Permissions } from 'expo';
 import Setting from './Setting';
 import Conversation from './chat/Conversation';
 
-//const SERVER = 'http://192.168.0.32:8080';
-const SERVER = 'http://sandbox.fuwafuwa.web.id/qmc';
+const SERVER = 'http://192.168.0.32:8080';
+//const SERVER = 'http://sandbox.fuwafuwa.web.id/qmc';
 
 async function register(setting, conversation) {
   if (!setting) {
@@ -18,12 +19,12 @@ async function register(setting, conversation) {
 
   if (!conversation.push_token) {
     conversation.push_token = await Notifications.getExpoPushTokenAsync();
-    conversation.channel_id = `QMC-${uuid.v4()}`;
+    conversation.channel_id = `QMC-${conversation.push_token.replace(/.*\[(.*)\]/, '$1')}`;
     conversation.store();
   }
 
   let name = setting.name;
-  if (!name) name = 'QMC_' + conversation.channel_id.replace(/(.*-)/, '');
+  if (!name) name = 'QMC_' + conversation.channel_id.replace(/(.*-)/, '').substr(0,8);
   let response = fetch(`${SERVER}/ajax/chat/register`, {
     method: 'POST',
     headers: {

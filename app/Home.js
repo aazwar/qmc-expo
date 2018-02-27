@@ -24,9 +24,6 @@ export default class Home extends Component {
   componentWillMount() {
     Expo.ScreenOrientation.allow(Expo.ScreenOrientation.Orientation.PORTRAIT);
     let { setting } = this.props.screenProps;
-    if (!setting.name) {
-      this.props.navigation.navigate('Profile');
-    }
 
     if (!ask_permission()) {
       Toast.show({
