@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Linking, Image, View } from 'react-native';
+import { Linking, Image, View, TouchableWithoutFeedback } from 'react-native';
 import {
   Container,
   Header,
@@ -27,7 +27,6 @@ export default class GalleryScreen extends Component {
 
   componentDidMount() {
     let id = this.props.navigation.state.params.id;
-    console.log(`${SERVER}/ajax/gallery/retrieve-case?id=${id}`);
     fetch(`${SERVER}/ajax/gallery/retrieve-case?id=${id}`, {
       method: 'GET',
     })
@@ -48,7 +47,7 @@ export default class GalleryScreen extends Component {
 
   render() {
     let { cases } = this.state;
-    console.log(cases);
+    let id = this.props.navigation.state.params.id;
     return (
       <Container style={styles.container}>
         <Header>
@@ -63,6 +62,13 @@ export default class GalleryScreen extends Component {
           <Right />
         </Header>
         <Content padder>
+          <Card>
+            <CardItem cardBody>
+              <Body>
+                <Text>Tap image to zoom</Text>
+              </Body>
+            </CardItem>
+          </Card>
           {cases.map(gcase =>
             <Card key={gcase.id}>
               <CardItem>
@@ -73,10 +79,21 @@ export default class GalleryScreen extends Component {
                 </Body>
               </CardItem>
               <CardItem cardBody>
-                <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-                  <Image source={{ uri: `${SERVER}/${gcase.before_image}` }} style={{ height: 200, width: null, flex: 1 }} />
-                  <Image source={{ uri: `${SERVER}/${gcase.after_image}` }} style={{ height: 200, width: null, flex: 1 }} />
-                </View>
+                <TouchableWithoutFeedback
+                  key={gcase.id}
+                  onPress={() =>
+                    this.props.navigation.navigate('Zoom', {
+                      id,
+                      images: [
+                        { source: { uri: `${SERVER}/${gcase.before_image}` } },
+                        { source: { uri: `${SERVER}/${gcase.after_image}` } },
+                      ],
+                    })}>
+                  <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                    <Image source={{ uri: `${SERVER}/${gcase.before_image}` }} style={{ height: 200, width: null, flex: 1 }} />
+                    <Image source={{ uri: `${SERVER}/${gcase.after_image}` }} style={{ height: 200, width: null, flex: 1 }} />
+                  </View>
+                </TouchableWithoutFeedback>
               </CardItem>
               <CardItem>
                 <Body>

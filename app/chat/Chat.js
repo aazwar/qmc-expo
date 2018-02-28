@@ -8,13 +8,17 @@ import _ from 'lodash';
 import uuid from 'uuid';
 
 import styles from '../styles';
-import { SERVER } from '../Util';
+import { SERVER, register } from '../Util';
 
 export default class Chat extends Component {
   state = { message: [], notification: {} };
 
   async retrieve_messages() {
+    let { setting } = this.props.screenProps;
     let { conversation } = this.props;
+
+    await register(setting, conversation);
+
     try {
       let response = await fetch(`${SERVER}/ajax/chat/retrieve`, {
         method: 'POST',
@@ -77,6 +81,7 @@ export default class Chat extends Component {
         },
         body: JSON.stringify({
           channel_id: conversation.channel_id,
+          push_token: conversation.push_token,
           messages: messages.map(m => ({ user_id: 1, datetime: m.createdAt, text: m.text, id: m._id })),
         }),
       });

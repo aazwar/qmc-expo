@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Linking, Image, TouchableOpacity } from 'react-native';
+import { Linking, Image, TouchableWithoutFeedback } from 'react-native';
 import {
   Container,
   Header,
@@ -64,20 +64,20 @@ export default class GalleryScreen extends Component {
             <Card key={category.id}>
               <CardItem>
                 <Body>
-                  <Text>
+                  <Text style={{ fontWeight: 'bold' }}>
                     {category.name}
                   </Text>
                 </Body>
               </CardItem>
               <CardItem cardBody>
+                <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('GalleryDetail', { id: category.id })}>
                 <Image source={{ uri: `${SERVER}/${category.cover_image}` }} style={{ height: 200, width: null, flex: 1 }} />
+                </TouchableWithoutFeedback>
               </CardItem>
               <CardItem>
-                <Left>
-                  <Button rounded info small onPress={() => this.props.navigation.navigate('GalleryDetail', { id: category.id })}>
-                    <Text>View</Text>
-                  </Button>
-                </Left>
+                <Text>
+                  {category.description}
+                </Text>
               </CardItem>
             </Card>
           )}

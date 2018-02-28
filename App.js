@@ -22,6 +22,7 @@ import Profile from './app/profile';
 import CallUs from './app/callus';
 import Gallery from './app/gallery';
 import GalleryDetail from './app/gallery/Detail';
+import Zoom from './app/gallery/Zoom';
 import Review from './app/services/Review';
 import WriteReview from './app/services/WriteReview';
 
@@ -42,6 +43,7 @@ const screens = {
   CallUs: { screen: CallUs },
   Gallery: { screen: Gallery },
   GalleryDetail: { screen: GalleryDetail },
+  Zoom: { screen: Zoom },
   Review: { screen: Review },
   WriteReview: { screen: WriteReview },
 };

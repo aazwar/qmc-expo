@@ -43,9 +43,7 @@ export default class ChatRoot extends Component {
           </Body>
           <Right />
         </Header>
-        {this.conversation.channel_id
-          ? <Chat {...this.props} conversation={this.conversation} />
-          : <Register {...this.props} conversation={this.conversation} reload={this.reload.bind(this)} />}
+        <Chat {...this.props} conversation={this.conversation} />
       </Container>
     );
   }

@@ -24,7 +24,7 @@ async function register(setting, conversation) {
   }
 
   let name = setting.name;
-  if (!name) name = 'QMC_' + conversation.channel_id.replace(/(.*-)/, '').substr(0,8);
+  if (!name) name = 'QMC_' + conversation.channel_id.replace(/(.*-)/, '').substr(0, 8);
   let response = fetch(`${SERVER}/ajax/chat/register`, {
     method: 'POST',
     headers: {
