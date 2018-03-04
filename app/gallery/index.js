@@ -71,7 +71,7 @@ export default class GalleryScreen extends Component {
               </CardItem>
               <CardItem cardBody>
                 <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('GalleryDetail', { id: category.id })}>
-                <Image source={{ uri: `${SERVER}/${category.cover_image}` }} style={{ height: 200, width: null, flex: 1 }} />
+                  <Image source={{ uri: `${SERVER}/${category.cover_image}` }} style={{ height: 200, width: null, flex: 1 }} />
                 </TouchableWithoutFeedback>
               </CardItem>
               <CardItem>

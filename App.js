@@ -67,16 +67,29 @@ const AppNavigator = StackNavigator(
   }
 );
 
-let setting = new Setting();
-setting.load();
-Font.loadAsync({
-  'medula-one': require('./app/assets/fonts/MedulaOne-Regular.ttf'),
-});
+export default class App extends React.Component {
+  state = { loaded: false };
 
-export default () =>
-  <Root>
-    <AppNavigator screenProps={{ setting }} />
-  </Root>;
+  async componentWillMount() {
+    let setting = new Setting();
+    await setting.load();
+    this.setting = setting;
+    Font.loadAsync({
+      'medula-one': require('./app/assets/fonts/MedulaOne-Regular.ttf'),
+      Roboto: require('./node_modules/native-base/Fonts/Roboto.ttf'),
+      Roboto_medium: require('./node_modules/native-base/Fonts/Roboto_medium.ttf'),
+    }).then(() => this.setState({ loaded: true }));
+  }
+
+  render() {
+    if (!this.state.loaded) return null;
+    return (
+      <Root>
+        <AppNavigator screenProps={{ setting: this.setting }} />
+      </Root>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   container: {

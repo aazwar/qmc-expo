@@ -59,14 +59,14 @@ export default class Services extends Component {
                     <Text>Detail</Text>
                   </Button>
                 </Left>
+                <Body>
+                  <Button rounded info small onPress={() => this.props.navigation.navigate('Review', { id: service.id })}>
+                    <Text>Review</Text>
+                  </Button>
+                </Body>
                 <Right>
-                  <Button
-                    rounded
-                    info
-                    small
-                    onPress={() => this.props.navigation.navigate('Book', { id: service.id })}
-                    style={{ width: 200 }}>
-                    <Text style={{ textAlign: 'center' }}>Book an Appointment</Text>
+                  <Button rounded info small onPress={() => this.props.navigation.navigate('Book', { id: service.id })}>
+                    <Text style={{ width: 120 }}>Appointment</Text>
                   </Button>
                 </Right>
               </CardItem>

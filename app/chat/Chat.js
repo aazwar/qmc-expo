@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, Platform } from 'react-native';
 import { Permissions, Notifications } from 'expo';
 import { Container, Header, Title, Content, Text, Button, Icon, Footer, FooterTab, Left, Right, Body, Toast } from 'native-base';
+import KeyboardSpacer from 'react-native-keyboard-spacer';
 import { GiftedChat } from 'react-native-gifted-chat';
 import { Feather } from '@expo/vector-icons';
 import _ from 'lodash';
@@ -55,7 +56,7 @@ export default class Chat extends Component {
     this.retrieve_messages();
   }
 
-  async componentWillMount() {
+  async componentDidMount() {
     this._notificationSubscription = Notifications.addListener(this._handleNotification.bind(this));
     let { conversation } = this.props;
     await this.setState(previousState => ({
@@ -105,6 +106,7 @@ export default class Chat extends Component {
     return (
       <View style={{ flex: 1 }}>
         <GiftedChat
+          forceGetKeyboardHeight={Platform.OS === 'android' && Platform.Version < 21}
           renderAvatar={null}
           messages={this.state.messages}
           onSend={messages => this.onSend(messages)}
@@ -112,6 +114,7 @@ export default class Chat extends Component {
             _id: 1,
           }}
         />
+        {Platform.OS === 'android' ? <KeyboardSpacer /> : null}
       </View>
     );
   }
