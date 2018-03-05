@@ -2,7 +2,7 @@ import { Notifications, Permissions } from 'expo';
 import Setting from './Setting';
 import Conversation from './chat/Conversation';
 
-const SERVER = 'http://192.168.0.31:8080';
+const SERVER = 'http://192.168.0.33:8080';
 //const SERVER = 'http://sandbox.fuwafuwa.web.id/qmc';
 
 async function register(setting, conversation) {

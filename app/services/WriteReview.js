@@ -17,7 +17,7 @@ import {
 } from 'native-base';
 import { Image, AsyncStorage, TouchableOpacity, View, TextInput } from 'react-native';
 
-import styles, { deviceWidth } from '../styles';
+import styles, { deviceWidth, deviceHeight } from '../styles';
 
 export default class About extends Component {
   state = { rating: 5, text: '' };
@@ -48,6 +48,7 @@ export default class About extends Component {
           <Card>
             <CardItem>
               <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', alignContent: 'center' }}>
+				<Text style={{ fontWeight: 'bold'}}>Rate: </Text>
                 <TouchableOpacity onPress={() => this.setState({ rating: 1 })}>
                   <Icon style={style} name="ios-star" />
                 </TouchableOpacity>
@@ -67,20 +68,22 @@ export default class About extends Component {
             </CardItem>
           </Card>
           <Card>
-            <CardItem />
+            <CardItem>
+              <Text style={{ fontWeight: 'bold'}}>Review</Text>
+            </CardItem>
             <CardItem body>
               <TextInput
                 multiline={true}
                 numberOfLines={10}
                 onChangeText={text => this.setState({ text })}
                 value={this.state.text}
-								style={{height: 120, borderColor: 'gray', borderWidth: 1}}
+                style={{ height: deviceHeight / 2, borderColor: 'gray', borderWidth: 1, flex: 1 }}
               />
             </CardItem>
             <CardItem>
               <Left>
                 <Button rounded info small onPress={() => this.props.navigation.navigate('Book', { id: service.id })}>
-                  <Text style={{ width: 120 }}>Appointment</Text>
+                  <Text>Submit</Text>
                 </Button>
               </Left>
             </CardItem>

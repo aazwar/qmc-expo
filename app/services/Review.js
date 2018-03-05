@@ -104,7 +104,7 @@ export default class Review extends Component {
 
   componentDidMount() {
     let id = this.props.navigation.state.params.id;
-    this._dummy();
+    //this._dummy();
     fetch(`${SERVER}/ajax/rating/retrieve`, {
       method: 'POST',
       headers: {
