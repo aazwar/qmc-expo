@@ -19,17 +19,13 @@ export default class Biography extends Component {
             </Button>
           </Left>
           <Body>
-            <Title style={{ width: deviceWidth - 80 }}>
-              {doctor.name}
-            </Title>
+            <Title style={{ width: deviceWidth - 80 }}>{doctor.name}</Title>
           </Body>
           <Right />
         </Header>
 
         <Content padder>
-          <MarkDown>
-            {doctor.biography + '\n'}
-          </MarkDown>
+          <MarkDown>{doctor.biography + '\n'}</MarkDown>
         </Content>
       </Container>
     );

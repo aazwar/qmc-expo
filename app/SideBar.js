@@ -101,15 +101,13 @@ class SideBar extends Component {
           <Image square style={styles.drawerImage} source={drawerImage} />
           <List
             dataArray={datas}
-            renderRow={data =>
+            renderRow={data => (
               <ListItem button noBorder onPress={() => this.props.navigation.navigate(data.route)}>
                 <Left>
                   {renderIcon(data.icon)}
-                  <Text style={styles.text}>
-                    {data.name}
-                  </Text>
+                  <Text style={styles.text}>{data.name}</Text>
                 </Left>
-                {data.types &&
+                {data.types && (
                   <Right style={{ flex: 1 }}>
                     <Badge
                       style={{
@@ -120,8 +118,10 @@ class SideBar extends Component {
                       }}>
                       <Text style={styles.badgeText}>{`${data.types} Types`}</Text>
                     </Badge>
-                  </Right>}
-              </ListItem>}
+                  </Right>
+                )}
+              </ListItem>
+            )}
           />
         </Content>
       </Container>

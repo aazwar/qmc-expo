@@ -26,9 +26,7 @@ export default class Tour extends Component {
             </Button>
           </Left>
           <Body>
-            <Title style={{ width: deviceHeight - 100, textAlign: 'center' }}>
-              {place.name}
-            </Title>
+            <Title style={{ width: deviceHeight - 100, textAlign: 'center' }}>{place.name}</Title>
           </Body>
           <Right />
         </Header>

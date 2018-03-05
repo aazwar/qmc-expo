@@ -41,7 +41,9 @@ export default class Book extends Component {
     birth_date_chooser_visible: false,
     department_id: '',
     department_text: '',
-    appointment_date: moment().add(1, 'days').format('YYYY-MM-DD'),
+    appointment_date: moment()
+      .add(1, 'days')
+      .format('YYYY-MM-DD'),
     appointment_date_chooser_visible: false,
     appointment_time: moment().format('HH') + ':00',
     appointment_time_chooser_visible: false,
@@ -74,7 +76,9 @@ export default class Book extends Component {
       hour: appointment_time.format('h'),
       time: appointment_time.format('A'),
     };
-    const formBody = Object.keys(data).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&');
+    const formBody = Object.keys(data)
+      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&');
     fetch('http://qmc-kuwait.com/btsup.php', {
       method: 'POST',
       headers: {
@@ -174,7 +178,8 @@ export default class Book extends Component {
             date={this.state.birth_date ? moment(this.state.birth_date).toDate() : new Date()}
             mode="date"
             onConfirm={date =>
-              this.setState({ birth_date: moment(date).format('YYYY-MM-DD'), birth_date_chooser_visible: false })}
+              this.setState({ birth_date: moment(date).format('YYYY-MM-DD'), birth_date_chooser_visible: false })
+            }
             onCancel={() => this.setState({ birth_date_chooser_visible: false })}
             isVisible={this.state.birth_date_chooser_visible}
           />
@@ -182,7 +187,8 @@ export default class Book extends Component {
             date={moment(this.state.appointment_date).toDate()}
             mode="date"
             onConfirm={date =>
-              this.setState({ appointment_date: moment(date).format('YYYY-MM-DD'), appointment_date_chooser_visible: false })}
+              this.setState({ appointment_date: moment(date).format('YYYY-MM-DD'), appointment_date_chooser_visible: false })
+            }
             onCancel={() => this.setState({ appointment_date_chooser_visible: false })}
             isVisible={this.state.appointment_date_chooser_visible}
           />
@@ -190,7 +196,8 @@ export default class Book extends Component {
             date={moment(this.state.appointment_time, 'HH:mm').toDate()}
             mode="time"
             onConfirm={time =>
-              this.setState({ appointment_time: `${moment(time).format('HH')}:00`, appointment_time_chooser_visible: false })}
+              this.setState({ appointment_time: `${moment(time).format('HH')}:00`, appointment_time_chooser_visible: false })
+            }
             onCancel={() => this.setState({ appointment_time_chooser_visible: false })}
             isVisible={this.state.appointment_time_chooser_visible}
           />

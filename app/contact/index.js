@@ -16,18 +16,15 @@ export default class ContactHome extends React.Component {
     return (
       <ListItem icon>
         <Left>
-          <TouchableOpacity onPress={() => Linking.openURL(link)}>
-            {icon}
-          </TouchableOpacity>
+          <TouchableOpacity onPress={() => Linking.openURL(link)}>{icon}</TouchableOpacity>
         </Left>
         <Body>
-          <Text onPress={() => Linking.openURL(link)}>
-            {text}
-          </Text>
-          {text2 &&
+          <Text onPress={() => Linking.openURL(link)}>{text}</Text>
+          {text2 && (
             <Text note onPress={() => Linking.openURL(link)}>
               {text2}
-            </Text>}
+            </Text>
+          )}
         </Body>
       </ListItem>
     );

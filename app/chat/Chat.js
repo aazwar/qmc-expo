@@ -90,6 +90,7 @@ export default class Chat extends Component {
         messages: GiftedChat.append(previousState.messages, messages),
       }));
       conversation.messages = conversation.messages.concat(messages);
+      console.log(conversation.messages);
       conversation.store();
     } catch (err) {
       Toast.show({

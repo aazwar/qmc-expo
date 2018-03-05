@@ -60,13 +60,11 @@ export default class GalleryScreen extends Component {
           <Right />
         </Header>
         <Content padder>
-          {categories.map(category =>
+          {categories.map(category => (
             <Card key={category.id}>
               <CardItem>
                 <Body>
-                  <Text style={{ fontWeight: 'bold' }}>
-                    {category.name}
-                  </Text>
+                  <Text style={{ fontWeight: 'bold' }}>{category.name}</Text>
                 </Body>
               </CardItem>
               <CardItem cardBody>
@@ -75,12 +73,10 @@ export default class GalleryScreen extends Component {
                 </TouchableWithoutFeedback>
               </CardItem>
               <CardItem>
-                <Text>
-                  {category.description}
-                </Text>
+                <Text>{category.description}</Text>
               </CardItem>
             </Card>
-          )}
+          ))}
         </Content>
       </Container>
     );

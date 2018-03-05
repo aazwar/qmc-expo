@@ -5,11 +5,7 @@ export default class MarkDown extends React.Component {
   render() {
     let fragments = this.props.children.match(/([^_\*]+)|(_.+?_)|(\*.+?\*)/g);
     if (fragments.length == 1 && !fragments[0].match(/^(_|\*)/)) {
-      return (
-        <Text {...this.props}>
-          {fragments[0]}
-        </Text>
-      );
+      return <Text {...this.props}>{fragments[0]}</Text>;
     } else {
       return (
         <Text {...this.props}>
@@ -30,11 +26,7 @@ export default class MarkDown extends React.Component {
                 );
                 break;
               default:
-                return (
-                  <Text key={i}>
-                    {t}
-                  </Text>
-                );
+                return <Text key={i}>{t}</Text>;
             }
           })}
         </Text>
@@ -44,11 +36,7 @@ export default class MarkDown extends React.Component {
       const patt = /_|\*/;
       let type;
     } else {
-      return (
-        <Text {...this.props}>
-          {this.props.children}
-        </Text>
-      );
+      return <Text {...this.props}>{this.props.children}</Text>;
     }
   }
 }

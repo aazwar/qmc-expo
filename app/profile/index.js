@@ -26,6 +26,8 @@ import { Col, Row, Grid } from 'react-native-easy-grid';
 
 import Setting from '../Setting';
 import styles, { deviceWidth } from '../styles';
+import { change_name } from '../Util';
+import Conversation from '../chat/Conversation';
 
 let moment = require('moment');
 
@@ -51,6 +53,7 @@ export default class Profile extends Component {
     let { setting } = this.props.screenProps;
     setting.assign(this.state);
     setting.store();
+    change_name(setting.name);
   }
 
   render() {
@@ -113,7 +116,8 @@ export default class Profile extends Component {
             date={this.state.birth_date ? moment(this.state.birth_date).toDate() : new Date()}
             mode="date"
             onConfirm={date =>
-              this.setState({ birth_date: moment(date).format('YYYY-MM-DD'), birth_date_chooser_visible: false })}
+              this.setState({ birth_date: moment(date).format('YYYY-MM-DD'), birth_date_chooser_visible: false })
+            }
             onCancel={() => this.setState({ birth_date_chooser_visible: false })}
             isVisible={this.state.birth_date_chooser_visible}
           />

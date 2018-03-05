@@ -2,7 +2,7 @@ import { Notifications, Permissions } from 'expo';
 import Setting from './Setting';
 import Conversation from './chat/Conversation';
 
-const SERVER = 'http://192.168.0.32:8080';
+const SERVER = 'http://192.168.0.31:8080';
 //const SERVER = 'http://sandbox.fuwafuwa.web.id/qmc';
 
 async function register(setting, conversation) {
@@ -24,7 +24,7 @@ async function register(setting, conversation) {
   }
 
   let name = setting.name;
-  if (!name) name = 'QMC_' + conversation.channel_id.replace(/(.*-)/, '').substr(0, 8);
+  if (!name) name = conversation.channel_id.substr(0, 8);
   let response = fetch(`${SERVER}/ajax/chat/register`, {
     method: 'POST',
     headers: {
@@ -44,7 +44,9 @@ async function register(setting, conversation) {
   });
 }
 
-function change_name(channel_id, name) {
+async function change_name(name) {
+  conversation = new Conversation();
+  await conversation.load();
   let response = fetch(`${SERVER}/ajax/chat/change-name`, {
     method: 'POST',
     headers: {
@@ -53,7 +55,7 @@ function change_name(channel_id, name) {
     },
     body: JSON.stringify({
       name,
-      channel_id,
+      channel_id: conversation.channel_id,
     }),
   });
 }

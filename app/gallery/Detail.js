@@ -69,13 +69,11 @@ export default class GalleryScreen extends Component {
               </Body>
             </CardItem>
           </Card>
-          {cases.map(gcase =>
+          {cases.map(gcase => (
             <Card key={gcase.id}>
               <CardItem>
                 <Body>
-                  <Text>
-                    {`Before: ${gcase.before_caption}`}
-                  </Text>
+                  <Text>{`Before: ${gcase.before_caption}`}</Text>
                 </Body>
               </CardItem>
               <CardItem cardBody>
@@ -88,7 +86,8 @@ export default class GalleryScreen extends Component {
                         { source: { uri: `${SERVER}/${gcase.before_image}` } },
                         { source: { uri: `${SERVER}/${gcase.after_image}` } },
                       ],
-                    })}>
+                    })
+                  }>
                   <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                     <Image source={{ uri: `${SERVER}/${gcase.before_image}` }} style={{ height: 200, width: null, flex: 1 }} />
                     <Image source={{ uri: `${SERVER}/${gcase.after_image}` }} style={{ height: 200, width: null, flex: 1 }} />
@@ -97,13 +96,11 @@ export default class GalleryScreen extends Component {
               </CardItem>
               <CardItem>
                 <Body>
-                  <Text>
-                    {`After: ${gcase.after_caption}`}
-                  </Text>
+                  <Text>{`After: ${gcase.after_caption}`}</Text>
                 </Body>
               </CardItem>
             </Card>
-          )}
+          ))}
         </Content>
       </Container>
     );

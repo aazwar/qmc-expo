@@ -39,12 +39,10 @@ export default class Tour extends Component {
         </Header>
 
         <Content padder>
-          {places.map(place =>
+          {places.map(place => (
             <Card key={place.id}>
               <CardItem header>
-                <Text style={{ fontWeight: 'bold' }}>
-                  {place.name}
-                </Text>
+                <Text style={{ fontWeight: 'bold' }}>{place.name}</Text>
               </CardItem>
               <TouchableOpacity onPress={() => this.props.navigation.navigate('TourView', { id: place.id })}>
                 <CardItem cardBody>
@@ -52,7 +50,7 @@ export default class Tour extends Component {
                 </CardItem>
               </TouchableOpacity>
             </Card>
-          )}
+          ))}
           <Text />
         </Content>
       </Container>

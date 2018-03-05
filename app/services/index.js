@@ -41,13 +41,11 @@ export default class Services extends Component {
         </Header>
 
         <Content padder>
-          {services.map(service =>
+          {services.map(service => (
             <Card key={service.id}>
               <CardItem>
                 <Body>
-                  <Text>
-                    {service.name}
-                  </Text>
+                  <Text>{service.name}</Text>
                 </Body>
               </CardItem>
               <CardItem cardBody>
@@ -71,7 +69,7 @@ export default class Services extends Component {
                 </Right>
               </CardItem>
             </Card>
-          )}
+          ))}
         </Content>
       </Container>
     );

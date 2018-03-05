@@ -40,16 +40,12 @@ export default class Doctors extends Component {
         </Header>
 
         <Content padder>
-          {doctors.map(doctor =>
+          {doctors.map(doctor => (
             <Card key={doctor.id}>
               <CardItem>
                 <Body>
-                  <Text>
-                    {doctor.name}
-                  </Text>
-                  <Text note>
-                    {doctor.title}
-                  </Text>
+                  <Text>{doctor.name}</Text>
+                  <Text note>{doctor.title}</Text>
                 </Body>
               </CardItem>
               <CardItem cardBody>
@@ -68,7 +64,7 @@ export default class Doctors extends Component {
                 </Right>
               </CardItem>
             </Card>
-          )}
+          ))}
         </Content>
       </Container>
     );

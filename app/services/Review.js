@@ -145,36 +145,26 @@ export default class Review extends Component {
             </Button>
           </Left>
           <Body>
-            <Title style={{ width: deviceWidth - 80 }}>
-              {service.name}
-            </Title>
+            <Title style={{ width: deviceWidth - 80 }}>{service.name}</Title>
           </Body>
           <Right />
         </Header>
 
         <Content padder>
-          <Card>
-            {stats && <Star stats={stats} />}
-          </Card>
-          {reviews.map((review, id) =>
+          <Card>{stats && <Star stats={stats} />}</Card>
+          {reviews.map((review, id) => (
             <Card key={id}>
               <CardItem>
                 <Left>
-                  <Text style={{ marginLeft: 0, fontSize: 12, fontWeight: 'bold' }}>
-                    {review.name}
-                  </Text>
+                  <Text style={{ marginLeft: 0, fontSize: 12, fontWeight: 'bold' }}>{review.name}</Text>
                 </Left>
                 <Body />
                 <Right>
-                  <Text style={{ fontSize: 12 }}>
-                    {moment(review.date).format('YYYY-MM-DD')}
-                  </Text>
+                  <Text style={{ fontSize: 12 }}>{moment(review.date).format('YYYY-MM-DD')}</Text>
                 </Right>
               </CardItem>
               <CardItem cardBody>
-                <Text style={{ margin: 10 }}>
-                  {review.review}
-                </Text>
+                <Text style={{ margin: 10 }}>{review.review}</Text>
               </CardItem>
               <CardItem>
                 <Left>
@@ -182,7 +172,7 @@ export default class Review extends Component {
                 </Left>
               </CardItem>
             </Card>
-          )}
+          ))}
         </Content>
 
         <Footer>
