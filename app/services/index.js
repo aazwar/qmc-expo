@@ -64,7 +64,7 @@ export default class Services extends Component {
                 </Body>
                 <Right>
                   <Button rounded info small onPress={() => this.props.navigation.navigate('Book', { id: service.id })}>
-                    <Text style={{ width: 120 }}>Appointment</Text>
+                    <Text>Booking</Text>
                   </Button>
                 </Right>
               </CardItem>

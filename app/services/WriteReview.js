@@ -17,15 +17,26 @@ import {
 } from 'native-base';
 import { Image, AsyncStorage, TouchableOpacity, View, TextInput } from 'react-native';
 
+import Conversation from '../chat/Conversation';
 import styles, { deviceWidth, deviceHeight } from '../styles';
+import { send_review } from '../Util';
 
 export default class About extends Component {
-  state = { rating: 5, text: '' };
-  componentWillMount() {}
-
+  state = { rating: 5, review: '' };
+	
+	componentWillMount() {
+		let conversation = new Conversation();
+		conversation.load();
+		this.setState({ conversation });
+	}
+	
+	send(id, uid, rating, review) {
+		send_review(id, uid, rating, review).then(() => this.props.navigation.navigate('Review', { id }))
+	}
+	
   render() {
     let id = this.props.navigation.state.params.id;
-    let { rating } = this.state;
+    let { rating, conversation } = this.state;
     let style = {
       fontSize: 28,
       color: 'orange',
@@ -75,14 +86,14 @@ export default class About extends Component {
               <TextInput
                 multiline={true}
                 numberOfLines={10}
-                onChangeText={text => this.setState({ text })}
-                value={this.state.text}
-                style={{ height: deviceHeight / 2, borderColor: 'gray', borderWidth: 1, flex: 1 }}
+                onChangeText={review => this.setState({ review })}
+                value={this.state.review}
+                style={{ height: 160, borderColor: 'gray', borderWidth: 1, flex: 1 }}
               />
             </CardItem>
             <CardItem>
               <Left>
-                <Button rounded info small onPress={() => this.props.navigation.navigate('Book', { id: service.id })}>
+                <Button rounded info small onPress={() => this.send(id, conversation.channel_id, this.state.rating, this.state.review)}>
                   <Text>Submit</Text>
                 </Button>
               </Left>

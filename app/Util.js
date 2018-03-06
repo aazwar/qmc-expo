@@ -2,7 +2,7 @@ import { Notifications, Permissions } from 'expo';
 import Setting from './Setting';
 import Conversation from './chat/Conversation';
 
-const SERVER = 'http://192.168.0.33:8080';
+const SERVER = 'http://192.168.0.31:8080';
 //const SERVER = 'http://sandbox.fuwafuwa.web.id/qmc';
 
 async function register(setting, conversation) {
@@ -24,7 +24,7 @@ async function register(setting, conversation) {
   }
 
   let name = setting.name;
-  if (!name) name = conversation.channel_id.substr(0, 8);
+  if (!name) name = conversation.channel_id.substr(0, 12);
   let response = fetch(`${SERVER}/ajax/chat/register`, {
     method: 'POST',
     headers: {
@@ -84,4 +84,20 @@ async function ask_permission() {
   return true;
 }
 
-export { register, change_name, ask_permission, SERVER };
+function send_review(department_id, channel_id, rating, review) {
+  return fetch(`${SERVER}/ajax/rating/rate`, {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+			department_id,
+			channel_id,
+			rating,
+			review
+    }),
+  });	
+}
+
+export { register, change_name, ask_permission, send_review, SERVER };

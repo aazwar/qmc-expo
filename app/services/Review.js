@@ -73,38 +73,8 @@ export default class Review extends Component {
     };
   }
 
-  _dummy() {
-    let reviews = [
-      {
-        name: 'AAA',
-        date: '2018-02-20',
-        rating: '5',
-        review:
-          'Beware when using computed properties as their value might change each time you are calling them. Also, they can change any other value in their enclosing scope if a setter is used (more below)!!!',
-      },
-      {
-        name: 'BBB',
-        date: '2018-02-20',
-        rating: '4',
-        review:
-          'To start, you have to write a variable and explicitly declare the type of the property to help the compiler know what kind of value will be assigned to it.',
-      },
-      {
-        name: 'CCC',
-        date: '2018-02-20',
-        rating: '5',
-        review:
-          'To start, you have to write a variable and explicitly declare the type of the property to help the compiler know what kind of value will be assigned to it.',
-      },
-    ];
-    let stats = this._statistic(reviews);
-    this.setState({ reviews, stats });
-    console.log(stats);
-  }
-
-  componentDidMount() {
+	_retrieve() {
     let id = this.props.navigation.state.params.id;
-    //this._dummy();
     fetch(`${SERVER}/ajax/rating/retrieve`, {
       method: 'POST',
       headers: {
@@ -120,6 +90,7 @@ export default class Review extends Component {
         let reviews = json.reviews;
         let stats = this._statistic(reviews);
         this.setState({ reviews, stats });
+				console.log(json);
       })
       .catch(error =>
         Toast.show({
@@ -129,6 +100,10 @@ export default class Review extends Component {
           type: 'warning',
         })
       );
+	}
+	
+  componentDidMount() {
+    this._retrieve();
   }
 
   render() {
@@ -147,7 +122,11 @@ export default class Review extends Component {
           <Body>
             <Title style={{ width: deviceWidth - 80 }}>{service.name}</Title>
           </Body>
-          <Right />
+          <Right>
+            <Button transparent onPress={() => this._retrieve()}>
+              <Icon name="ios-refresh" />
+            </Button>
+					</Right>
         </Header>
 
         <Content padder>
