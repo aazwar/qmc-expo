@@ -58,6 +58,12 @@ const datas = [
     bg: '#C5F442',
   },
   {
+    name: 'Video',
+    route: 'Video',
+    icon: 'ios-videocam',
+    bg: '#C5F442',
+  },
+  {
     name: 'Chat',
     route: 'Chat',
     icon: 'chatbubbles',

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Linking, Image, TouchableWithoutFeedback } from 'react-native';
+import { Linking, Image, WebView } from 'react-native';
 import {
   Container,
   Header,
@@ -22,21 +22,21 @@ import {
 import { SERVER } from '../Util';
 import styles, { deviceWidth, contentHeight } from '../styles';
 
-export default class GalleryScreen extends Component {
-  state = { categories: [] };
+export default class VideoScreen extends Component {
+  state = { videos: [] };
 
   componentDidMount() {
-    fetch(`${SERVER}/ajax/gallery/category-list`, {
+    fetch(`${SERVER}/ajax/video/retrieve`, {
       method: 'POST',
     })
       .then(response => response.json())
       .then(json => {
-        let categories = json;
-        this.setState({ categories });
+        let videos = json;
+        this.setState({ videos });
       })
       .catch(error =>
         Toast.show({
-          text: "Can't fetch Case History",
+          text: "Can't fetch Video list",
           position: 'bottom',
           buttonText: 'Ok',
           type: 'warning',
@@ -45,7 +45,7 @@ export default class GalleryScreen extends Component {
   }
 
   render() {
-    let { categories } = this.state;
+    let { videos } = this.state;
     return (
       <Container style={styles.container}>
         <Header>
@@ -55,25 +55,20 @@ export default class GalleryScreen extends Component {
             </Button>
           </Left>
           <Body>
-            <Title style={{ width: deviceWidth - 100 }}>Case History</Title>
+            <Title style={{ width: deviceWidth - 100 }}>Video</Title>
           </Body>
           <Right />
         </Header>
         <Content padder>
-          {categories.map(category => (
-            <Card key={category.id}>
-              <CardItem>
-                <Body>
-                  <Text style={{ fontWeight: 'bold' }}>{category.name}</Text>
-                </Body>
-              </CardItem>
+          {videos.map(video => (
+            <Card key={video.id}>
               <CardItem cardBody>
-                <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('GalleryDetail', { id: category.id })}>
-                  <Image source={{ uri: `${SERVER}/${category.cover_image}` }} style={{ height: 200, width: null, flex: 1 }} />
-                </TouchableWithoutFeedback>
+								<WebView 
+						source={{ uri: `https://www.youtube.com/embed/${video.id}?autoplay=1&playsinline=1&rel=0&fs=0&modestbranding=1&showinfo=0` }} allowsInlineMediaPlayback={true} 
+								style={{ height: (deviceWidth - 10) * 9 / 16}}/>
               </CardItem>
               <CardItem>
-                <Text>{category.description}</Text>
+                <Text>{video.caption}</Text>
               </CardItem>
             </Card>
           ))}

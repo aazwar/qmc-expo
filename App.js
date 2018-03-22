@@ -25,6 +25,7 @@ import GalleryDetail from './app/gallery/Detail';
 import Zoom from './app/gallery/Zoom';
 import Review from './app/services/Review';
 import WriteReview from './app/services/WriteReview';
+import Video from './app/video';
 
 const screens = {
   Home: { screen: Home },
@@ -46,6 +47,7 @@ const screens = {
   Zoom: { screen: Zoom },
   Review: { screen: Review },
   WriteReview: { screen: WriteReview },
+	Video: { screen: Video }
 };
 
 const Drawer = DrawerNavigator(screens, {
