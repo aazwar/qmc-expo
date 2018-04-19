@@ -73,7 +73,7 @@ export default class Review extends Component {
     };
   }
 
-	_retrieve() {
+  _retrieve() {
     let id = this.props.navigation.state.params.id;
     fetch(`${SERVER}/ajax/rating/retrieve`, {
       method: 'POST',
@@ -90,7 +90,7 @@ export default class Review extends Component {
         let reviews = json.reviews;
         let stats = this._statistic(reviews);
         this.setState({ reviews, stats });
-				console.log(json);
+        console.log(json);
       })
       .catch(error =>
         Toast.show({
@@ -100,8 +100,8 @@ export default class Review extends Component {
           type: 'warning',
         })
       );
-	}
-	
+  }
+
   componentDidMount() {
     this._retrieve();
   }
@@ -126,7 +126,7 @@ export default class Review extends Component {
             <Button transparent onPress={() => this._retrieve()}>
               <Icon name="ios-refresh" />
             </Button>
-					</Right>
+          </Right>
         </Header>
 
         <Content padder>

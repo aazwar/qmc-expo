@@ -63,9 +63,15 @@ export default class VideoScreen extends Component {
           {videos.map(video => (
             <Card key={video.id}>
               <CardItem cardBody>
-								<WebView 
-						source={{ uri: `https://www.youtube.com/embed/${video.id}?autoplay=1&playsinline=1&rel=0&fs=0&modestbranding=1&showinfo=0` }} allowsInlineMediaPlayback={true} 
-								style={{ height: (deviceWidth - 10) * 9 / 16}}/>
+                <WebView
+                  source={{
+                    uri: `https://www.youtube.com/embed/${
+                      video.id
+                    }?autoplay=1&playsinline=1&rel=0&fs=0&modestbranding=1&showinfo=0`,
+                  }}
+                  allowsInlineMediaPlayback={true}
+                  style={{ height: (deviceWidth - 10) * 9 / 16 }}
+                />
               </CardItem>
               <CardItem>
                 <Text>{video.caption}</Text>

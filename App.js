@@ -47,7 +47,7 @@ const screens = {
   Zoom: { screen: Zoom },
   Review: { screen: Review },
   WriteReview: { screen: WriteReview },
-	Video: { screen: Video }
+  Video: { screen: Video },
 };
 
 const Drawer = DrawerNavigator(screens, {

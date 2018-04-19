@@ -92,12 +92,12 @@ function send_review(department_id, channel_id, rating, review) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-			department_id,
-			channel_id,
-			rating,
-			review
+      department_id,
+      channel_id,
+      rating,
+      review,
     }),
-  });	
+  });
 }
 
 export { register, change_name, ask_permission, send_review, SERVER };
